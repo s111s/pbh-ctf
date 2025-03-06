@@ -1,6 +1,27 @@
 # pbh-ctf
 
+## Utils command
+
+### Verify the block was built by the block builder
+
+Get block builder address:
+
+```shell
+cast call <WORLD_CHAIN_BLOCK_REGISTRY_CONTRACT_ADDRESS> "builtBlocks(uint256)(address)" <BLOCK_NUMBER> -r <RPC_URI>
 ```
+
+Example:
+
+```shell
+cast call 0x46CD6926427A2190310eBA2BF713F0EF51dFB59F "builtBlocks(uint256)(address)" 10255853 -r https://worldchain-sepolia.g.alchemy.com/public
+```
+
+During the competition, the block builder's address was set to 0x7426657A0224e6b1A8aB1863d2D3903dE3325B3d
+
+If the above `cast` command returns 0x7426657A0224e6b1A8aB1863d2D3903dE3325B3d, then the block was created by the block builder.
+
+
+
 
                     ██████  ██████  ██   ██      ██████ ████████ ███████ 
                     ██   ██ ██   ██ ██   ██     ██         ██    ██      
